@@ -36,6 +36,16 @@ npm run preview
 
 After `npm run build`, host the `dist` folder on any static host (GitHub Pages, Netlify, Cloudflare Pages). Open it in Chrome or Edge and use **Install** in the address bar. It works offline after the first visit. The service worker only runs in production builds, and it is cache-first, so bump `CACHE` in `public/sw.js` when you ship changes.
 
+## Android (Google Play)
+
+Live site: https://shirellblackcat.github.io/log-hunter-academy/
+
+1. Go to [pwabuilder.com](https://www.pwabuilder.com), paste the live URL, and run the check.
+2. Choose **Package for stores > Android** and generate the package. Keep the signing key it gives you safe and backed up.
+3. Upload the `.aab` to the Play Console (one-time $25 developer account). Add the `assetlinks.json` PWABuilder provides to `public/.well-known/` so the app opens without a browser bar.
+
+Pushing to `main` redeploys the site automatically via GitHub Actions.
+
 ## Project layout
 
 - `src/data/missions.js` holds missions, logs, answer keys, hints and debriefs. Add a mission by adding an object here.
